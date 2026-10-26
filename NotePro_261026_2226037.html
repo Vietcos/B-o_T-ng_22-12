@@ -1,0 +1,577 @@
+26 Oct, 22:24
+
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Báo Tường Điện Tử - Chào Mừng Ngày Thành Lập QĐND Việt Nam 22/12</title>
+ <!-- Tailwind CSS CDN -->
+ <script src="https://cdn.tailwindcss.com"></script>
+ <!-- Google Fonts -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,400&family=Playfair+Display:ital,wght@0,600;0,800;0,900;1,400&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+ <!-- FontAwesome Icons -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+ <!-- Canvas Confetti JS -->
+ <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+ <script>
+ tailwind.config = {
+ theme: {
+ extend: {
+ colors: {
+ flagRed: '#DA251D',
+ flagYellow: '#FFFF00',
+ armyGreen: '#1b4332',
+ armyGreenDark: '#081c15',
+ armyGold: '#D4AF37',
+ paperBg: '#FDFBF7',
+ paperBorder: '#E5DDCB'
+ },
+ fontFamily: {
+ serif: ['Playfair Display', 'Merriweather', 'serif'],
+ body: ['Roboto', 'sans-serif'],
+ newspaper: ['Merriweather', 'serif']
+ }
+ }
+ }
+ }
+ </script>
+ <style>
+ body {
+ background-color: #0f172a;
+ background-image: radial-gradient(#1e293b 1px, transparent 1px);
+ background-size: 24px 24px;
+ }
+ .newspaper-container {
+ background-color: #FAF6EE;
+ background-image: linear-gradient(to right, rgba(0,0,0,0.02) 1px, transparent 1px), linear-gradient(to bottom, rgba(0,0,0,0.02) 1px, transparent 1px);
+ background-size: 20px 20px;
+ box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+ }
+ .drop-cap::first-letter {
+ font-family: 'Playfair Display', serif;
+ font-size: 3.5rem;
+ line-height: 2.8rem;
+ padding-top: 4px;
+ padding-right: 8px;
+ padding-left: 3px;
+ float: left;
+ color: #DA251D;
+ font-weight: bold;
+ }
+ .star-glow {
+ filter: drop-shadow(0 0 10px rgba(255, 255, 0, 0.8));
+ }
+ .custom-scrollbar::-webkit-scrollbar {
+ width: 6px;
+ }
+ .custom-scrollbar::-webkit-scrollbar-track {
+ background: #f1f1f1;
+ }
+ .custom-scrollbar::-webkit-scrollbar-thumb {
+ background: #1b4332;
+ border-radius: 3px;
+ }
+ </style>
+</head>
+<body class="font-body text-slate-800 antialiased selection:bg-red-600 selection:text-white py-6 px-2 sm:px-4 md:px-8">
+
+ <!-- BẢNG ĐIỀU KHIỂN NỔI -->
+ <div class="fixed bottom-4 right-4 z-50 flex flex-col gap-2">
+ <button id="musicToggle" class="bg-red-700 hover:bg-red-800 text-yellow-300 p-3.5 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 flex items-center justify-center w-12 h-12 border-2 border-yellow-400" title="Bật/Tắt nhạc hành quân">
+ <i id="musicIcon" class="fas fa-music text-lg"></i>
+ </button>
+ <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="bg-armyGreen hover:bg-armyGreenDark text-white p-3.5 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 flex items-center justify-center w-12 h-12 border-2 border-yellow-500/50" title="Lên đầu trang">
+ <i class="fas fa-arrow-up text-lg"></i>
+ </button>
+ </div>
+
+ <!-- KHU VỰC BÁO TƯỜNG CHÍNH -->
+ <main class="max-w-6xl mx-auto newspaper-container rounded-lg border-8 border-armyGreen p-4 sm:p-8 md:p-12 relative overflow-hidden my-4">
+ 
+ <!-- HOẠ TIẾT GÓC KHUNG -->
+ <div class="absolute top-2 left-2 w-12 h-12 border-t-4 border-l-4 border-red-700"></div>
+ <div class="absolute top-2 right-2 w-12 h-12 border-t-4 border-r-4 border-red-700"></div>
+ <div class="absolute bottom-2 left-2 w-12 h-12 border-b-4 border-l-4 border-red-700"></div>
+ <div class="absolute bottom-2 right-2 w-12 h-12 border-b-4 border-r-4 border-red-700"></div>
+
+ <!-- HEADER / MĂNG-SÉT BÁO TƯỜNG -->
+ <header class="text-center border-b-4 border-red-700 pb-8 mb-8 relative">
+ <div class="flex flex-wrap justify-between items-center text-xs sm:text-sm font-semibold uppercase tracking-wider text-armyGreen mb-4 px-2 border-b border-armyGreen/20 pb-2">
+ <span>Số đặc biệt mừng 22/12</span>
+ <span>Đội Thiếu Niên Tiền Phong Hồ Chí Minh</span>
+ <span>Ngày 22 Tháng 12 Năm 2026</span>
+ </div>
+
+ <div class="flex justify-center items-center my-4">
+ <div class="relative inline-block">
+ <div class="w-24 h-24 sm:w-32 sm:h-32 bg-red-600 rounded-lg shadow-lg border-2 border-yellow-400 flex items-center justify-center mx-auto mb-2">
+ <i class="fas fa-star text-yellow-300 text-5xl sm:text-7xl star-glow"></i>
+ </div>
+ </div>
+ </div>
+
+ <h1 class="font-serif text-4xl sm:text-6xl md:text-7xl font-black text-red-700 tracking-tight leading-none uppercase mb-3 drop-shadow-md">
+ QUYẾT CHIẾN QUYẾT THẮNG
+ </h1>
+ 
+ <p class="font-serif italic text-lg sm:text-xl text-armyGreen font-bold tracking-wide">
+ Chào mừng Ngày Thành lập Quân đội Nhân dân Việt Nam (22/12/1944 - 22/12/2026)
+ </p>
+ <p class="text-xs sm:text-sm font-semibold text-slate-600 uppercase tracking-widest mt-1">
+ & Ngày Hội Quốc Phòng Toàn Dân
+ </p>
+
+ <div class="mt-6 flex justify-center flex-wrap gap-3 sm:gap-6 text-xs sm:text-sm font-bold text-slate-700">
+ <span class="px-3 py-1 bg-green-100 border border-green-800 rounded-full text-green-900"><i class="fas fa-shield-halved text-green-700 mr-1"></i> Lục Quân</span>
+ <span class="px-3 py-1 bg-blue-100 border border-blue-800 rounded-full text-blue-900"><i class="fas fa-anchor text-blue-700 mr-1"></i> Hải Quân</span>
+ <span class="px-3 py-1 bg-sky-100 border border-sky-800 rounded-full text-sky-900"><i class="fas fa-plane text-sky-700 mr-1"></i> Phòng Không - Không Quân</span>
+ <span class="px-3 py-1 bg-emerald-100 border border-emerald-800 rounded-full text-emerald-900"><i class="fas fa-person-rifle text-emerald-700 mr-1"></i> Biên Phòng</span>
+ </div>
+ </header>
+
+ <!-- NAVIGATION -->
+ <nav class="mb-10 bg-armyGreen text-yellow-300 p-2 rounded-md shadow-md">
+ <ul class="flex flex-wrap justify-around items-center text-xs sm:text-base font-bold uppercase gap-2">
+ <li><a href="#loi-ngo" class="hover:text-white px-3 py-1 rounded transition duration-150"><i class="fas fa-book-open mr-1"></i> Lời Ngỏ</a></li>
+ <li><a href="#moc-lich-su" class="hover:text-white px-3 py-1 rounded transition duration-150"><i class="fas fa-monument mr-1"></i> Mốc Lịch Sử</a></li>
+ <li><a href="#goc-tho-van" class="hover:text-white px-3 py-1 rounded transition duration-150"><i class="fas fa-feather-pointed mr-1"></i> Văn Thơ</a></li>
+ <li><a href="#goc-tri-an" class="hover:text-white px-3 py-1 rounded transition duration-150"><i class="fas fa-heart mr-1"></i> Tri Ân</a></li>
+ <li><a href="#quiz-lich-su" class="hover:text-white px-3 py-1 rounded transition duration-150"><i class="fas fa-brain mr-1"></i> Thử Thách (15 Câu)</a></li>
+ </ul>
+ </nav>
+
+ <!-- MAIN GRID -->
+ <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+ 
+ <!-- CỘT TRÁI (8 COLS) -->
+ <div class="lg:col-span-8 space-y-10">
+
+ <!-- SECTION: LỜI NGỎ -->
+ <section id="loi-ngo" class="bg-white p-6 sm:p-8 rounded-lg border border-amber-200 shadow-sm relative">
+ <div class="absolute -top-3 left-6 bg-red-700 text-yellow-300 font-serif font-bold text-sm px-4 py-1 rounded-sm uppercase tracking-wider shadow">
+ Xã Luận / Lời Ngỏ
+ </div>
+ 
+ <h2 class="font-serif text-2xl sm:text-3xl font-bold text-armyGreen mt-2 mb-4 border-b pb-2 border-slate-200">
+ Hào Hùng Bản Hùng Ca Người Chiến Sĩ
+ </h2>
+
+ <div class="text-slate-700 font-newspaper leading-relaxed text-base sm:text-lg text-justify space-y-4">
+ <p class="drop-cap">
+ Tháng Mười Hai về mang theo cơn gió lạnh đầu mùa, nhưng trong lòng mỗi người dân Việt Nam lại ấm áp và rực cháy một niềm tự hào dân tộc mãnh liệt. Ngày 22 tháng 12 không chỉ là cột mốc lịch sử đánh dấu sự ra đời của Quân đội Nhân dân Việt Nam anh hùng, mà còn là Ngày hội Quốc phòng toàn dân – ngày để toàn thể nhân dân hướng về những người con ưu tú đã và đang cống hiến trọn đời cho sự nghiệp xây dựng và bảo vệ Tổ quốc.
+ </p>
+ <p>
+ Trải qua hơn 8 thập kỷ xây dựng, chiến đấu và trưởng thành, từ 34 chiến sĩ ban đầu tại rừng Trần Hưng Đạo dưới sự chỉ huy tài tình của Đại tướng Võ Nguyên Giáp, Quân đội ta đã lớn mạnh không ngừng, lập nên những kỳ tích chói lọi trong lịch sử giữ nước và dựng nước.
+ </p>
+ </div>
+
+ <div class="mt-6 text-right font-serif italic text-armyGreen font-bold">
+ — Ban Biên Tập Báo Tường
+ </div>
+ </section>
+
+ <!-- SECTION: MỐC LỊCH SỬ -->
+ <section id="moc-lich-su" class="bg-amber-50/50 p-6 sm:p-8 rounded-lg border border-amber-200">
+ <h2 class="font-serif text-2xl font-bold text-red-700 mb-6 flex items-center">
+ <i class="fas fa-clock-rotate-left mr-3 text-red-600"></i>Những Mốc Son Lịch Sử Trọng Đại
+ </h2>
+
+ <div class="relative border-l-4 border-armyGreen ml-3 space-y-8">
+ <div class="ml-6 relative">
+ <div class="absolute -left-[35px] top-1.5 w-4 h-4 bg-yellow-400 border-4 border-armyGreen rounded-full"></div>
+ <span class="inline-block bg-armyGreen text-yellow-300 font-bold px-3 py-0.5 rounded text-xs mb-1">22/12/1944</span>
+ <h3 class="font-bold text-lg text-slate-900">Thành Lập Đội Việt Nam Tuyên Truyền Giải Phóng Quân</h3>
+ <p class="text-sm text-slate-700 mt-1 font-newspaper">Tại khu rừng Trần Hưng Đạo (Cao Bằng), Đội được thành lập gồm 34 chiến sĩ do đồng chí Võ Nguyên Giáp trực tiếp chỉ huy.</p>
+ </div>
+
+ <div class="ml-6 relative">
+ <div class="absolute -left-[35px] top-1.5 w-4 h-4 bg-yellow-400 border-4 border-armyGreen rounded-full"></div>
+ <span class="inline-block bg-armyGreen text-yellow-300 font-bold px-3 py-0.5 rounded text-xs mb-1">25-26/12/1944</span>
+ <h3 class="font-bold text-lg text-slate-900">Chiến Thắng Phay Khắt - Nà Ngần</h3>
+ <p class="text-sm text-slate-700 mt-1 font-newspaper">Trận đánh đầu tiên giành thắng lợi giòn giã, mở đầu cho truyền thống bách chiến bách thắng.</p>
+ </div>
+
+ <div class="ml-6 relative">
+ <div class="absolute -left-[35px] top-1.5 w-4 h-4 bg-yellow-400 border-4 border-armyGreen rounded-full"></div>
+ <span class="inline-block bg-armyGreen text-yellow-300 font-bold px-3 py-0.5 rounded text-xs mb-1">07/05/1954</span>
+ <h3 class="font-bold text-lg text-slate-900">Chiến Thắng Điện Biên Phủ</h3>
+ <p class="text-sm text-slate-700 mt-1 font-newspaper">"Lừng lẫy năm châu, chấn động địa cầu", kết thúc thắng lợi cuộc kháng chiến chống thực dân Pháp.</p>
+ </div>
+
+ <div class="ml-6 relative">
+ <div class="absolute -left-[35px] top-1.5 w-4 h-4 bg-yellow-400 border-4 border-armyGreen rounded-full"></div>
+ <span class="inline-block bg-armyGreen text-yellow-300 font-bold px-3 py-0.5 rounded text-xs mb-1">30/04/1975</span>
+ <h3 class="font-bold text-lg text-slate-900">Đại Thắng Mùa Xuân 1975</h3>
+ <p class="text-sm text-slate-700 mt-1 font-newspaper">Chiến dịch Hồ Chí Minh lịch sử giải phóng hoàn toàn miền Nam, thống nhất non sông.</p>
+ </div>
+ </div>
+ </section>
+
+ <!-- SECTION: GÓC THƠ VĂN -->
+ <section id="goc-tho-van" class="bg-white p-6 sm:p-8 rounded-lg border border-amber-200 shadow-sm">
+ <h2 class="font-serif text-2xl font-bold text-armyGreen mb-6 flex items-center border-b pb-2">
+ <i class="fas fa-scroll mr-3 text-red-600"></i>Góc Thơ Văn - Giai Điệu Tự Hào
+ </h2>
+
+ <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+ <div class="bg-amber-50/60 p-5 rounded border border-amber-200/80">
+ <h3 class="font-serif font-bold text-red-700 text-center text-lg mb-1">TÂY TIẾN (Trích)</h3>
+ <p class="text-xs text-center text-slate-500 mb-4 font-serif italic">Tác giả: Quang Dũng</p>
+ <div class="font-serif text-sm text-slate-700 leading-relaxed text-center italic space-y-2">
+ <p>Sông Mã xa rồi Tây Tiến ơi!<br>Nhớ về rừng núi nhớ chơi vơi<br>Tây Tiến đoàn binh không mọc tóc<br>Quân xanh màu lá dữ oai hùm<br>Mắt trừng gửi mộng qua biên giới<br>Đêm mơ Hà Nội dáng kiều thơm.</p>
+ </div>
+ </div>
+
+ <div class="bg-amber-50/60 p-5 rounded border border-amber-200/80">
+ <h3 class="font-serif font-bold text-red-700 text-center text-lg mb-1">ĐỒNG CHÍ (Trích)</h3>
+ <p class="text-xs text-center text-slate-500 mb-4 font-serif italic">Tác giả: Chính Hữu</p>
+ <div class="font-serif text-sm text-slate-700 leading-relaxed text-center italic space-y-2">
+ <p>Súng bên súng, đầu sát bên đầu<br>Đêm rét chung chăn thành đôi tri kỷ<br>Đồng chí!<br>Đêm nay rừng hoang sương muối<br>Đứng cạnh bên nhau chờ giặc tới<br>Đầu súng trăng treo.</p>
+ </div>
+ </div>
+ </div>
+ </section>
+ </div>
+
+ <!-- CỘT PHẢI (4 COLS) -->
+ <div class="lg:col-span-4 space-y-8">
+
+ <!-- WIDGET 1: BÁC HỒ -->
+ <div class="bg-red-800 text-yellow-300 p-6 rounded-lg shadow-md border-2 border-yellow-400 relative">
+ <div class="text-center font-serif">
+ <i class="fas fa-quote-left text-yellow-400 text-2xl mb-2"></i>
+ <p class="text-base font-bold italic leading-relaxed text-yellow-100 mb-3">
+ "Quân đội ta trung với Đảng, hiếu với dân, sẵn sàng chiến đấu hy sinh vì độc lập, tự do của Tổ quốc..."
+ </p>
+ <p class="text-xs uppercase font-bold text-yellow-300 tracking-wider">— Chủ tịch Hồ Chí Minh</p>
+ </div>
+ </div>
+
+ <!-- WIDGET 2: QUIZ TRẮC NGHIỆM 15 CÂU -->
+ <div id="quiz-lich-su" class="bg-white p-5 rounded-lg border border-amber-200 shadow-sm">
+ <h3 class="font-serif font-bold text-lg text-armyGreen mb-3 pb-2 border-b flex items-center justify-between">
+ <span><i class="fas fa-circle-question mr-2 text-red-600"></i>Thử Thách 15 Câu</span>
+ <span id="quiz-progress-badge" class="text-xs bg-red-100 text-red-700 px-2 py-0.5 rounded font-bold">1/15</span>
+ </h3>
+
+ <div id="quiz-box">
+ <p id="quiz-question" class="text-sm font-semibold text-slate-800 mb-3">Loading câu hỏi...</p>
+ <div id="quiz-options" class="space-y-2"></div>
+ <button id="quiz-next-btn" onclick="nextQuestion()" class="hidden mt-4 w-full bg-armyGreen text-yellow-300 font-bold text-xs py-2 rounded hover:bg-armyGreenDark transition">
+ Câu Tiếp Theo <i class="fas fa-arrow-right ml-1"></i>
+ </button>
+ </div>
+ <div id="quiz-result" class="hidden text-center py-4">
+ <i class="fas fa-trophy text-amber-500 text-4xl mb-2"></i>
+ <h4 class="font-bold text-slate-800 text-lg">Hoàn Thành Thử Thách!</h4>
+ <p id="quiz-score" class="text-sm text-slate-600 my-2 font-bold"></p>
+ <button onclick="restartQuiz()" class="text-xs bg-red-700 text-white font-bold px-4 py-2 rounded hover:bg-red-800 shadow">
+ Chơi Lại Từ Đầu
+ </button>
+ </div>
+ </div>
+
+ <!-- WIDGET 3: SỔ GỬI LỜI CHÚC (GUESTBOOK) -->
+ <div id="goc-tri-an" class="bg-white p-5 rounded-lg border border-amber-200 shadow-sm">
+ <h3 class="font-serif font-bold text-lg text-armyGreen mb-3 pb-2 border-b flex items-center">
+ <i class="fas fa-pen-nib mr-2 text-red-600"></i>Gửi Lời Tri Ân
+ </h3>
+ <form id="wishForm" onsubmit="addWish(event)" class="space-y-3">
+ <div>
+ <label class="block text-xs font-bold text-slate-700 mb-1">Họ & Tên bạn / Lớp:</label>
+ <input type="text" id="wishAuthor" required placeholder="Nguyễn Văn A - Lớp 12C3..." class="w-full text-xs p-2 border border-slate-300 rounded focus:outline-none focus:border-armyGreen">
+ </div>
+ <div>
+ <label class="block text-xs font-bold text-slate-700 mb-1">Lời chúc gửi Chú Bộ Đội:</label>
+ <textarea id="wishText" required rows="3" placeholder="Chúc các chú luôn mạnh khỏe..." class="w-full text-xs p-2 border border-slate-300 rounded focus:outline-none focus:border-armyGreen"></textarea>
+ </div>
+ <button type="submit" class="w-full bg-red-700 hover:bg-red-800 text-yellow-300 font-bold text-xs py-2 rounded shadow transition">
+ <i class="fas fa-paper-plane mr-1"></i> Gửi Thiệp Tri Ân
+ </button>
+ </form>
+ <div class="mt-4 pt-3 border-t">
+ <h4 class="text-xs font-bold text-slate-600 mb-2 uppercase">Lời Chúc (<span id="wishCount">0</span>):</h4>
+ <div id="wishesList" class="space-y-2 max-h-50 overflow-y-auto custom-scrollbar pr-1"></div>
+ </div>
+ </div>
+
+ </div>
+ </div>
+
+ <footer class="mt-12 pt-6 border-t-2 border-armyGreen text-center text-slate-600 text-xs space-y-2 font-serif">
+ <p class="font-bold text-armyGreen text-sm">TRANG BÁO TƯỜNG ĐIỆN TỬ - CHÀO MỪNG NGÀY THÀNH LẬP QĐND VIỆT NAM 22/12</p>
+ <p>"Vì Tổ quốc Xã hội Chủ nghĩa, vì lý tưởng của Bác Hồ vĩ đại - Sẵn sàng!"</p>
+ </footer>
+ </main>
+
+ <!-- JAVASCRIPT -->
+ <script>
+ /* -----------------------------------------------------------
+ * 1. NHẠC NỀN HÀNH QUÂN
+ * ----------------------------------------------------------- */
+ let audioCtx = null;
+ let isPlaying = false;
+ let songInterval = null;
+
+ const musicBtn = document.getElementById('musicToggle');
+ const musicIcon = document.getElementById('musicIcon');
+
+ const marchingSong = [
+ {f: 392.00, d: 300}, {f: 392.00, d: 300}, {f: 523.25, d: 600},
+ {f: 587.33, d: 300}, {f: 659.25, d: 300}, {f: 523.25, d: 600},
+ {f: 659.25, d: 300}, {f: 698.46, d: 300}, {f: 783.99, d: 600},
+ {f: 783.99, d: 300}, {f: 659.25, d: 300}, {f: 523.25, d: 800},
+ {f: 392.00, d: 300}, {f: 440.00, d: 300}, {f: 523.25, d: 600},
+ {f: 587.33, d: 400}, {f: 523.25, d: 400}, {f: 392.00, d: 800}
+ ];
+
+ function playNote(freq, duration) {
+ if (!audioCtx) return;
+ try {
+ const osc = audioCtx.createOscillator();
+ const gain = audioCtx.createGain();
+ osc.type = 'square';
+ osc.frequency.value = freq;
+ gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
+ gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration / 1000);
+ osc.connect(gain);
+ gain.connect(audioCtx.destination);
+ osc.start();
+ osc.stop(audioCtx.currentTime + duration / 1000);
+ } catch(e) {}
+ }
+
+ function toggleMusic() {
+ if (!audioCtx) {
+ audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+ }
+ if (audioCtx.state === 'suspended') {
+ audioCtx.resume();
+ }
+
+ if (isPlaying) {
+ clearInterval(songInterval);
+ isPlaying = false;
+ musicIcon.className = "fas fa-music text-lg";
+ musicBtn.classList.remove("animate-pulse");
+ } else {
+ isPlaying = true;
+ musicIcon.className = "fas fa-pause text-lg animate-pulse";
+ musicBtn.classList.add("animate-pulse");
+ let idx = 0;
+ songInterval = setInterval(() => {
+ playNote(marchingSong[idx].f, marchingSong[idx].d);
+ idx = (idx + 1) % marchingSong.length;
+ }, 450);
+ }
+ }
+ musicBtn.addEventListener('click', toggleMusic);
+
+ /* -----------------------------------------------------------
+ * 2. BỘ 15 CÂU HỎI TRẮC NGHIỆM
+ * ----------------------------------------------------------- */
+ const quizData = [
+ {
+ q: "Đội Việt Nam Tuyên truyền Giải phóng quân thành lập ngày tháng năm nào?",
+ options: ["22/12/1944", "19/08/1945", "30/04/1975", "02/09/1945"],
+ correct: 0
+ },
+ {
+ q: "Ai là người trực tiếp chỉ huy thành lập Đội VNTTGiải phóng quân?",
+ options: ["Đồng chí Văn Tiến Dũng", "Đại tướng Võ Nguyên Giáp", "Đồng chí Nguyễn Chí Thanh", "Chủ tịch Hồ Chí Minh"],
+ correct: 1
+ },
+ {
+ q: "Khi mới thành lập, Đội VNTTGiải phóng quân có bao nhiêu chiến sĩ?",
+ options: ["12 chiến sĩ", "34 chiến sĩ", "50 chiến sĩ", "100 chiến sĩ"],
+ correct: 1
+ },
+ {
+ q: "Nơi thành lập Đội VNTTGiải phóng quân thuộc tỉnh nào?",
+ options: ["Lạng Sơn", "Cao Bằng", "Thái Nguyên", "Tuyên Quang"],
+ correct: 1
+ },
+ {
+ q: "Hai trận đánh thắng lợi đầu tiên của Đội là trận nào?",
+ options: ["Phay Khắt - Nà Ngần", "Đông Khê - Thất Khê", "Ấp Bắc - Vạn Tường", "Điện Biên Phủ"],
+ correct: 0
+ },
+ {
+ q: "Quân đội Nhân dân Việt Nam chính thức đổi tên từ Việt Nam Giải phóng quân vào năm nào?",
+ options: ["1945", "1946", "1950", "1954"],
+ correct: 1
+ },
+ {
+ q: "Chiến dịch lịch sử nào kết thúc 9 năm kháng chiến chống thực dân Pháp (1954)?",
+ options: ["Chiến dịch Việt Bắc", "Chiến dịch Biên Giới", "Chiến dịch Điện Biên Phủ", "Chiến dịch Tây Nguyên"],
+ correct: 2
+ },
+ {
+ q: "Ngày 22/12 hàng năm ngoài là Ngày thành lập QĐND Việt Nam còn là ngày gì?",
+ options: ["Ngày Nhà giáo VN", "Ngày hội Quốc phòng toàn dân", "Ngày Thành lập Đoàn", "Ngày Phụ nữ VN"],
+ correct: 1
+ },
+ {
+ q: "Đại tướng đầu tiên của Quân đội Nhân dân Việt Nam là ai?",
+ options: ["Đại tướng Văn Tiến Dũng", "Đại tướng Hoàng Văn Thái", "Đại tướng Võ Nguyên Giáp", "Đại tướng Nguyễn Chí Thanh"],
+ correct: 2
+ },
+ {
+ q: "Bài hát chính thức của Quân đội Nhân dân Việt Nam là bài gì?",
+ options: ["Vì nhân dân quên mình", "Tiến quân ca", "Quân ca", "Giải phóng miền Nam"],
+ correct: 0
+ },
+ {
+ q: "Chiến dịch Hồ Chí Minh lịch sử giải phóng hoàn toàn miền Nam diễn ra vào năm nào?",
+ options: ["1972", "1973", "1974", "1975"],
+ correct: 3
+ },
+ {
+ q: "Quân chủng nào được mệnh danh là 'mắt thần' bảo vệ vùng trời Tổ quốc?",
+ options: ["Hải quân", "Phòng Không - Không Quân", "Bộ đội Biên phòng", "Cảnh sát biển"],
+ correct: 1
+ },
+ {
+ q: "Hình ảnh 'Bộ đội Cụ Hồ' bắt nguồn từ cuộc kháng chiến nào?",
+ options: ["Chống Pháp", "Chống Mỹ", "Chống thực dân Pháp và đế quốc Mỹ", "Bảo vệ biên giới"],
+ correct: 2
+ },
+ {
+ q: "Lực lượng nào đóng vai trò nòng cốt quản lý, bảo vệ chủ quyền biên giới quốc gia?",
+ options: ["Bộ đội Biên phòng", "Hải quân nhân dân", "Cảnh sát biển", "Dân quân tự vệ"],
+ correct: 0
+ },
+ {
+ q: "Bác Hồ đã trao cho Quân đội ta lá cờ mang thêu 8 chữ vàng nào?",
+ options: ["Trung với nước, hiếu với dân", "Quyết chiến quyết thắng", "Đoàn kết, kỷ luật, quyết thắng", "Vì độc lập tự do"],
+ correct: 1
+ }
+ ];
+
+ let currentQ = 0;
+ let score = 0;
+
+ function loadQuiz() {
+ const q = quizData[currentQ];
+ document.getElementById('quiz-progress-badge').innerText = `${currentQ + 1}/${quizData.length}`;
+ document.getElementById('quiz-question').innerText = `Câu ${currentQ + 1}: ${q.q}`;
+ const optsContainer = document.getElementById('quiz-options');
+ optsContainer.innerHTML = '';
+ document.getElementById('quiz-next-btn').classList.add('hidden');
+
+ q.options.forEach((opt, idx) => {
+ const btn = document.createElement('button');
+ btn.className = "w-full text-left text-xs p-2.5 rounded border border-slate-200 hover:bg-amber-100 transition duration-150 font-medium text-slate-700";
+ btn.innerText = opt;
+ btn.onclick = () => checkAnswer(idx, btn);
+ optsContainer.appendChild(btn);
+ });
+ }
+
+ function checkAnswer(selectedIdx, btnElement) {
+ const q = quizData[currentQ];
+ const buttons = document.getElementById('quiz-options').children;
+ for (let btn of buttons) { btn.disabled = true; }
+
+ if (selectedIdx === q.correct) {
+ btnElement.className = "w-full text-left text-xs p-2.5 rounded bg-green-600 text-white font-bold";
+ score++;
+ if (typeof confetti === 'function') {
+ confetti({ particleCount: 30, spread: 50, origin: { y: 0.8 } });
+ }
+ } else {
+ btnElement.className = "w-full text-left text-xs p-2.5 rounded bg-red-600 text-white font-bold";
+ buttons[q.correct].className = "w-full text-left text-xs p-2.5 rounded bg-green-600 text-white font-bold";
+ }
+ document.getElementById('quiz-next-btn').classList.remove('hidden');
+ }
+
+ function nextQuestion() {
+ currentQ++;
+ if (currentQ < quizData.length) {
+ loadQuiz();
+ } else {
+ document.getElementById('quiz-box').classList.add('hidden');
+ document.getElementById('quiz-result').classList.remove('hidden');
+ document.getElementById('quiz-score').innerText = `Bạn đã chinh phục xuất sắc ${score}/${quizData.length} câu hỏi!`;
+ if (score >= 12 && typeof confetti === 'function') {
+ confetti({ particleCount: 150, spread: 100, origin: { y: 0.6 } });
+ }
+ }
+ }
+
+ function restartQuiz() {
+ currentQ = 0;
+ score = 0;
+ document.getElementById('quiz-result').classList.add('hidden');
+ document.getElementById('quiz-box').classList.remove('hidden');
+ loadQuiz();
+ }
+
+ /* -----------------------------------------------------------
+ * 3. GUESTBOOK LỜI CHÚC (LOCALSTORAGE)
+ * ----------------------------------------------------------- */
+ const defaultWishes = [
+ { author: "Chi Đoàn 12C3", text: "Kính chúc các chú bộ đội luôn vững tay súng bảo vệ bình yên Tổ quốc!", date: "22/12/2026" }
+ ];
+
+ function getWishes() {
+ const stored = localStorage.getItem('bt_army_wishes_15');
+ return stored ? JSON.parse(stored) : defaultWishes;
+ }
+
+ function renderWishes() {
+ const wishes = getWishes();
+ const container = document.getElementById('wishesList');
+ document.getElementById('wishCount').innerText = wishes.length;
+ container.innerHTML = '';
+ wishes.forEach(w => {
+ const card = document.createElement('div');
+ card.className = "p-2.5 bg-amber-50 rounded border border-amber-200 text-xs";
+ card.innerHTML = `
+ <div class="flex justify-between font-bold text-armyGreen mb-1">
+ <span><i class="fas fa-user-circle mr-1"></i>${escapeHtml(w.author)}</span>
+ <span class="text-[10px] text-slate-400">${w.date}</span>
+ </div>
+ <p class="text-slate-700 italic font-newspaper">"${escapeHtml(w.text)}"</p>
+ `;
+ container.appendChild(card);
+ });
+ }
+
+ function addWish(e) {
+ e.preventDefault();
+ const authorInput = document.getElementById('wishAuthor');
+ const textInput = document.getElementById('wishText');
+ const newWish = {
+ author: authorInput.value.trim(),
+ text: textInput.value.trim(),
+ date: new Date().toLocaleDateString('vi-VN')
+ };
+ const wishes = getWishes();
+ wishes.unshift(newWish);
+ localStorage.setItem('bt_army_wishes_15', JSON.stringify(wishes));
+ authorInput.value = '';
+ textInput.value = '';
+ renderWishes();
+ if (typeof confetti === 'function') {
+ confetti({ particleCount: 50, spread: 50, origin: { y: 0.7 } });
+ }
+ }
+
+ function escapeHtml(str) {
+ return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+ }
+
+ window.addEventListener('DOMContentLoaded', () => {
+ loadQuiz();
+ renderWishes();
+ });
+ </script>
+</body>
+</html>
